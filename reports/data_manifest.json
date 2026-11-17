@@ -1,0 +1,30 @@
+{
+  "feature_version": "mfcc-prosody-v1",
+  "splits": {
+    "train": {
+      "csv_rows": 9989,
+      "usable": 9988,
+      "missing": [],
+      "failed": [
+        {
+          "clip_id": "dia125_utt3",
+          "error": "Command '['ffmpeg', '-nostdin', '-v', 'error', '-i', '/workspace/scratch/428f1db260c5/multimodal-robot-interaction/data/media/train/dia125_utt3.mp4', '-vn', '-ac', '1', '-ar', '16000', '-t', '60', '-f', 'f32le', 'pipe:1']' returned non-zero exit status 183."
+        }
+      ]
+    },
+    "dev": {
+      "csv_rows": 1109,
+      "usable": 1108,
+      "missing": [
+        "dia110_utt7"
+      ],
+      "failed": []
+    },
+    "test": {
+      "csv_rows": 2610,
+      "usable": 2610,
+      "missing": [],
+      "failed": []
+    }
+  }
+}

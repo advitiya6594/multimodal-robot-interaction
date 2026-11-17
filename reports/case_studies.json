@@ -1,0 +1,38 @@
+{
+  "selection": "Post-hoc illustrative cases. First matching test turn in original CSV order per category. Selected after final scoring. No model tuning from these cases.",
+  "cases": {
+    "audio_helps": {
+      "clip_id": "dia2_utt10",
+      "dialogue_id": 2,
+      "utterance_id": 10,
+      "label": "neutral",
+      "text": "joy",
+      "audio": "surprise",
+      "fusion": "neutral",
+      "transcript": "You got it?",
+      "replay": "python -m robot_interaction.demo --split test --dialogue 2"
+    },
+    "audio_hurts": {
+      "clip_id": "dia12_utt8",
+      "dialogue_id": 12,
+      "utterance_id": 8,
+      "label": "joy",
+      "text": "joy",
+      "audio": "sadness",
+      "fusion": "sadness",
+      "transcript": "That is so silly.",
+      "replay": "python -m robot_interaction.demo --split test --dialogue 12"
+    },
+    "both_wrong": {
+      "clip_id": "dia0_utt0",
+      "dialogue_id": 0,
+      "utterance_id": 0,
+      "label": "surprise",
+      "text": "neutral",
+      "audio": "sadness",
+      "fusion": "neutral",
+      "transcript": "Why do all you\u2019re coffee mugs have numbers on the bottom?",
+      "replay": "python -m robot_interaction.demo --split test --dialogue 0"
+    }
+  }
+}

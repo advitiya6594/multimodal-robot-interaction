@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Robot interaction · MELD</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+<strong>Multimodal robot interaction</strong>
+<span>Local inference · MELD text + audio</span>
+</header>
+<main>
+<h1>Listen. Interpret. Respond.</h1>
+<p class="intro">Replay a conversation and inspect how language and voice shape a character robot’s response. Compare the combined model with either input on its own.</p>
+<div class="controls">
+<label>Dataset split<select id="split">
+<option value="dev">Development</option>
+<option value="test">Test</option>
+</select>
+</label>
+<label>Dialogue<select id="dialogue">
+</select>
+</label>
+<label>Model<select id="mode">
+<option value="fusion">Text + audio</option>
+<option value="text">Text only</option>
+<option value="audio">Audio only</option>
+</select>
+</label>
+<button id="replay">Replay conversation</button>
+<button id="stop" disabled>Stop replay</button>
+</div>
+<div class="grid">
+<section class="panel">
+<div class="row">
+<strong>Conversation input</strong>
+<span id="position" class="meta">
+</span>
+</div>
+<div id="turns" class="turns">
+</div>
+<video id="video" controls playsinline>
+</video>
+<div class="row" style="margin-top:16px">
+<span id="speaker" class="meta">
+</span>
+<span id="truth" class="meta">
+</span>
+</div>
+<label for="transcript" style="margin-top:10px">Transcript supplied to model</label>
+<textarea id="transcript" maxlength="4000">
+</textarea>
+<button id="run" class="primary">Process this turn</button>
+<p id="status" class="status" role="status">Loading conversation…</p>
+<p class="note">Video is played for review. The model uses its audio and the supplied transcript. Inference begins at the end of a turn. Editing the transcript keeps the selected audio, enabling a controlled input comparison.</p>
+</section>
+<section class="panel">
+<div class="lamp-stage">
+<div class="lamp" id="lamp" aria-label="Simulated robot behavior">
+<i class="eye">
+</i>
+<i class="eye">
+</i>
+</div>
+</div>
+<div class="row">
+<h2 id="emotion">Awaiting input</h2>
+<span id="latency" class="meta">
+</span>
+</div>
+<p id="uncertainty" class="meta">Model scores are estimates of dataset labels.</p>
+<div id="scores">
+</div>
+<p id="reply" class="reply" aria-live="polite">
+</p>
+<p id="tags" class="tags">
+</p>
+<details>
+<summary>Structured output</summary>
+<pre id="json">{}</pre>
+</details>
+</section>
+</div>
+<div class="history">
+<strong>Interaction history</strong>
+<div id="history">
+</div>
+</div>
+<p class="note">Responses use explicit templates and a transcript excerpt. A fixed score threshold controls clarification. Behavior tags drive this visual simulation. Physical hardware and automatic speech transcription are future integrations.</p>
+</main>
+<script src="/app.js">
+</script>
+</body>
+</html>
